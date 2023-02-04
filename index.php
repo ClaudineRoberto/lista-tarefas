@@ -26,7 +26,7 @@
                     <input name='tarefa' type="text" class="form-control mt-3" placeholder="Digite a descrição da nova tarefa">
                 </div>
             </div>
-            <div class="row pt-3">
+            <div class="row pt-3 pb-3">
                 <div class="col">
                     <div class="button">
                         <button type="submit" class="btn btn-success">Salvar</button>
@@ -35,6 +35,19 @@
             </div>
         </form>
     </div>
+
+    <?php 
+    include 'conexao.php';
+    $sqlBusca = "select * from t_tarefas";
+
+    $todasAsTarefas = mysqli_query($conexao, $sqlBusca);
+
+    while ($umaTarefa = mysqli_fetch_assoc($todasAsTarefas)){
+        echo "{$umaTarefa['id']} - {$umaTarefa['descricao']} <br>";
+    }
+    mysqli_close($conexao);
+    ?>
+
 </main>
 
     
