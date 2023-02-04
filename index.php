@@ -43,7 +43,14 @@
     $todasAsTarefas = mysqli_query($conexao, $sqlBusca);
 
     while ($umaTarefa = mysqli_fetch_assoc($todasAsTarefas)){
-        echo "{$umaTarefa['id']} - {$umaTarefa['descricao']} <br>";
+        ?>
+        <?php echo $umaTarefa['id'];?> -
+        <?php echo $umaTarefa['descricao'];?>
+        <a href="" class="btn btn-warning btn-sm">Alterar</a>
+        <a class="btn btn-danger btn-sm" href="excluir-tarefa.php?id=<?php echo $umaTarefa['id']; ?>">Excluir</a>
+        <br>
+
+        <?php
     }
     mysqli_close($conexao);
     ?>

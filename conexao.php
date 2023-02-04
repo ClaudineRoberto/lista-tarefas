@@ -4,5 +4,10 @@ $banco = 'bd_tarefas';
 $usuario = 'root';
 $senha = '';
 
-$conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
+try {
+    $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
+} catch (Exception $th) {
+    echo "Erro na conexão";
+    exit();
+}
 ?>
