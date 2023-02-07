@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Fev-2023 às 02:22
+-- Tempo de geração: 07-Fev-2023 às 02:24
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_tarefas`
 --
-CREATE DATABASE IF NOT EXISTS `bd_tarefas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `bd_tarefas`;
 
 -- --------------------------------------------------------
 
@@ -31,17 +29,17 @@ USE `bd_tarefas`;
 
 CREATE TABLE `t_tarefas` (
   `id` int(11) NOT NULL,
-  `descricao` varchar(1000) NOT NULL
+  `descricao` varchar(1000) NOT NULL,
+  `responsavel` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `t_tarefas`
 --
 
-INSERT INTO `t_tarefas` (`id`, `descricao`) VALUES
-(2, 'Estudar para a prova'),
-(3, 'Formatar o computador'),
-(5, 'Fazer compras');
+INSERT INTO `t_tarefas` (`id`, `descricao`, `responsavel`) VALUES
+(29, 'Formatar o computador', 'Claudine'),
+(30, 'Fazer compras', 'Claudine');
 
 --
 -- Índices para tabelas despejadas
@@ -61,7 +59,7 @@ ALTER TABLE `t_tarefas`
 -- AUTO_INCREMENT de tabela `t_tarefas`
 --
 ALTER TABLE `t_tarefas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
