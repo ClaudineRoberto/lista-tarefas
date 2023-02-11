@@ -16,6 +16,7 @@ $todasAsTarefas = mysqli_query($conexao, $sqlBusca);
 
 while ($umaTarefa = mysqli_fetch_assoc($todasAsTarefas)) {
     $descricao = $umaTarefa['descricao'];    
+    $status = $umaTarefa['status'];
 }
 
 ?>
